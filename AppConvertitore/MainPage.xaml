@@ -35,13 +35,20 @@
                 />
 
             <Label
-                x:Name="lbRisultato"
-                Text="Risultato:"
+                x:Name="lblRisultato"
                 FontSize="20"
                 HorizontalOptions="Center"
                 Margin="0,20,0,0"
                 />
-            
+            <Button
+                x:Name="btnReset"
+                Text="Resetta"
+                TextColor="White"
+                BackgroundColor="Gray"
+                Clicked="btnReset_Clicked"
+                HorizontalOptions="Fill" 
+                />
+
         </VerticalStackLayout>
     </ScrollView>
 
