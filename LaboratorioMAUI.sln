@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prova1", "Prova1\Prova1.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppConvertitore", "AppConvertitore\AppConvertitore.csproj", "{C2BEB1ED-0707-4263-9B54-8BDF8F003216}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Equation", "Equation\Equation.csproj", "{89831D7B-7817-438A-9679-B78800A39347}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,12 @@ Global
 		{C2BEB1ED-0707-4263-9B54-8BDF8F003216}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2BEB1ED-0707-4263-9B54-8BDF8F003216}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C2BEB1ED-0707-4263-9B54-8BDF8F003216}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{89831D7B-7817-438A-9679-B78800A39347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89831D7B-7817-438A-9679-B78800A39347}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89831D7B-7817-438A-9679-B78800A39347}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{89831D7B-7817-438A-9679-B78800A39347}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89831D7B-7817-438A-9679-B78800A39347}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89831D7B-7817-438A-9679-B78800A39347}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,6 +46,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{3BB78AD9-1BB0-48EC-B9AE-ADBE19305647} = {6C83A596-D32D-B35F-00DD-F0C99B673980}
 		{C2BEB1ED-0707-4263-9B54-8BDF8F003216} = {6C83A596-D32D-B35F-00DD-F0C99B673980}
+		{89831D7B-7817-438A-9679-B78800A39347} = {6C83A596-D32D-B35F-00DD-F0C99B673980}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AD9F9B99-8C95-41E9-9B39-7DC03F379D53}
