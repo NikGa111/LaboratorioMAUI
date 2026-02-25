@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuizApp.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="25"
+            VerticalOptions="Center">
+
+            <Label
+                x:Name="ScoreLabel"
+                Text="Punteggio: 0"
+                FontSize="22"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                TextColor="{StaticResource Primary}"
+                />
+            <Label
+                Text="DOMANDA"
+                FontSize="12"
+                HorizontalOptions="Center"
+                />
+            <Label
+                x:Name="QuestionTextLabel"
+                Text="Caricamento domanda..."
+                FontSize="24"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                TextColor="Black"
+                />
+            <HorizontalStackLayout
+            Padding="30"
+            Spacing="25"
+            HorizontalOptions="Center">
+                <Button
+                x:Name="TrueButton"
+                Text="VERO"
+                FontSize="18"
+                Clicked="OnAnswerClicked"
+                CommandParameter="True"
+                WidthRequest="130"
+                HeightRequest="60"
+                Background="#27ae60"
+                CornerRadius="10"
+                />
+                <Button
+                x:Name="FalseButton"
+                Text="FALSO"
+                FontSize="18"
+                Clicked="OnAnswerClicked"
+                CommandParameter="False"
+                WidthRequest="130"
+                HeightRequest="60"
+                Background="#c0392b"
+                CornerRadius="10"
+                />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

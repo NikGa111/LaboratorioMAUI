@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppConvertitore", "AppConve
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Equation", "Equation\Equation.csproj", "{89831D7B-7817-438A-9679-B78800A39347}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizApp", "QuizApp\QuizApp.csproj", "{0ADB9A50-EDD2-4BCC-A7C9-2FD8B0722619}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,12 @@ Global
 		{89831D7B-7817-438A-9679-B78800A39347}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89831D7B-7817-438A-9679-B78800A39347}.Release|Any CPU.Build.0 = Release|Any CPU
 		{89831D7B-7817-438A-9679-B78800A39347}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0ADB9A50-EDD2-4BCC-A7C9-2FD8B0722619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ADB9A50-EDD2-4BCC-A7C9-2FD8B0722619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ADB9A50-EDD2-4BCC-A7C9-2FD8B0722619}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0ADB9A50-EDD2-4BCC-A7C9-2FD8B0722619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ADB9A50-EDD2-4BCC-A7C9-2FD8B0722619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ADB9A50-EDD2-4BCC-A7C9-2FD8B0722619}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,6 +55,7 @@ Global
 		{3BB78AD9-1BB0-48EC-B9AE-ADBE19305647} = {6C83A596-D32D-B35F-00DD-F0C99B673980}
 		{C2BEB1ED-0707-4263-9B54-8BDF8F003216} = {6C83A596-D32D-B35F-00DD-F0C99B673980}
 		{89831D7B-7817-438A-9679-B78800A39347} = {6C83A596-D32D-B35F-00DD-F0C99B673980}
+		{0ADB9A50-EDD2-4BCC-A7C9-2FD8B0722619} = {6C83A596-D32D-B35F-00DD-F0C99B673980}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AD9F9B99-8C95-41E9-9B39-7DC03F379D53}
