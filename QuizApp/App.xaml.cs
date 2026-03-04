@@ -8,5 +8,9 @@
 
             MainPage = new AppShell();
         }
+        private async void OnQuizFinished()
+        {
+            await Navigation.PushAsync(new ResultPage());
+        }
     }
 }

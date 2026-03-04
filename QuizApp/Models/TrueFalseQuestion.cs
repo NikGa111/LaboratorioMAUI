@@ -20,6 +20,9 @@ namespace QuizApp.Models
             { 
                 _correctAnswer = correctAnswer;
             }
-        
+        public override bool CheckAnswer(bool userAnswer)
+        {
+            return userAnswer == _correctAnswer;
+        }
     }
 }

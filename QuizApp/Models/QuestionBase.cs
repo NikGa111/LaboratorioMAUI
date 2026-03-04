@@ -32,5 +32,6 @@ namespace QuizApp.Models
             _text = text;
             _points = points;
         }
+        public abstract bool CheckAnswer(bool userAnswer);
     }
 }

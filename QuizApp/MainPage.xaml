@@ -57,6 +57,54 @@
                 CornerRadius="10"
                 />
             </HorizontalStackLayout>
+            
+            <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="FillAndExpand">
+
+                <Label 
+               x:Name="OpenScoreLabel"
+               Text="Punteggio: 0"
+               TextColor="#673AB7"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               Margin="0,20,0,0" />
+
+                <Label 
+               Text="DOMANDA"
+               TextColor="Gray"
+               FontSize="12"
+               HorizontalOptions="Center"
+               Margin="0,10,0,0" />
+
+                <Label 
+               x:Name="OpenQuestionLabel"
+               Text="Caricamento domanda..."
+               TextColor="Black"
+               FontSize="22"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               HorizontalOptions="Center"
+               Margin="0,10" />
+
+                <Entry 
+               x:Name="OpenAnswerEntry"
+               Placeholder="Scrivi la risposta..."
+               HorizontalTextAlignment="Center"
+               PlaceholderColor="LightGray"
+               TextColor="Black"
+               Margin="0,0,0,5" />
+
+                <Button 
+                x:Name="OpenConfirmAnswerButton"
+                Text="CONFERMA RISPOSTA"
+                BackgroundColor="#512BD4"
+                TextColor="White"
+                CornerRadius="0"
+                HeightRequest="60"
+                FontAttributes="Bold"
+                HorizontalOptions="Fill" />
+
+            </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
