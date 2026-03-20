@@ -1,4 +1,4 @@
-﻿namespace QuizApp
+﻿namespace AppQuiz
 {
     public partial class App : Application
     {
@@ -8,6 +8,5 @@
 
             MainPage = new AppShell();
         }
-
     }
 }
