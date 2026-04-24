@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PizzaApp.MainPage">
+
+    <ListView
+    HorizontalOptions="Center"
+    x:Name="listFrutti"
+    WidthRequest="300"
+    BackgroundColor="Transparent">
+         
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <HorizontalStackLayout Margin="5">
+                        <Label x:Name="lbFrutto"/>
+                        <Image Margin="5"
+                           Source="{Binding ImageUrl}"
+                           Aspect="AspectFill"
+                           HeightRequest="60"
+                           WidthRequest="70"/>
+
+                        <VerticalStackLayout>
+                            <Label
+                            Text="{Binding Nome}" />
+
+                            <Label
+                            Text="{Binding Provenienza}" />
+                        </VerticalStackLayout>
+                        
+                    </HorizontalStackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        </ListView>
+
+
+</ContentPage>

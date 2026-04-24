@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Test1.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Label
+                Text="LE MIE SPESE"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Entry
+                x:Name="EntryLista"
+                Placeholder="Nome lista (es. Marzo)"
+            />
+
+            <Entry
+                x:Name="EntryDescrizione"
+                Placeholder="Descrizione spesa"
+            />
+
+            <Entry
+                x:Name="EntryImporto"
+                Placeholder="Importo"
+            />
+            <Entry
+                x:Name="EntryQuantita"
+                Placeholder="Quantita"
+            />
+
+            <Button
+                x:Name="ButtonSalva"
+                Text="SALVA SPESA" 
+                BackgroundColor="Green"
+                Clicked="OnSalvaClicked"
+                HorizontalOptions="Fill" />
+
+            <Button
+                x:Name="ButtonVedi"
+                Text="VEDI SPESE" 
+                BackgroundColor="Blue"
+                Clicked="OnVediClicked"
+                HorizontalOptions="Fill" />
+
+            <Editor 
+                    x:Name="VediListe"
+                    FontSize="14"
+                    TextColor="#4A5568"
+                    BackgroundColor="#F7FAFC"
+                    Placeholder="Nessuna spesa trovata."/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

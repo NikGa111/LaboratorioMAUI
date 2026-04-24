@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Test1.DettaglioPage">
+    
+    <ScrollView>
+        <VerticalStackLayout 
+            Spacing="16">
+
+            
+            <Label 
+                Text="Dettaglio Spese"
+               FontSize="24"
+               FontAttributes="Bold"
+               TextColor="#676767"
+               HorizontalOptions="Center"
+               Margin="0,10,0,4"/>
+            
+            <Label 
+               x:Name="LabelNomeLista"    
+               FontSize="24"
+               FontAttributes="Bold"
+               TextColor="Aqua"
+               HorizontalOptions="Center"
+               Margin="0,10,0,4"/>
+
+
+
+            <VerticalStackLayout 
+                Spacing="10">
+
+                <Label 
+                    Text="VOCI DI SPESA"
+                    FontSize="11"
+                    FontAttributes="Bold"
+                    TextColor="#A6B7C6"
+                    CharacterSpacing="1.5"/>
+
+                <Editor 
+                    x:Name="VediSpese"
+                    FontSize="14"
+                    TextColor="#676767"
+                    BackgroundColor="Aqua"
+                    Placeholder="Nessuna spesa trovata."/>
+
+            </VerticalStackLayout>
+
+
+
+            <Button 
+                Text="Torna alla Home"
+                Clicked="OnTornaClicked"
+                BackgroundColor="#676767"
+                TextColor="White"
+                FontAttributes="Bold"
+                FontSize="15"
+                Margin="0,4,0,20"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
