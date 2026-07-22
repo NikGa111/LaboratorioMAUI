@@ -1,0 +1,49 @@
+appId: com.companyname.myroutinenew
+---
+- launchApp
+- startRecording: recording       # Starts capturing a video of the execution
+- tapOn: "🗓️"
+- tapOn: "+ Aggiungi Task"
+- inputText: AutomationTest
+- tapOn: "Avanti"
+- tapOn: "Lavoro"
+- eraseText: 10
+- inputText: 30/05/2026
+- tapOn: "Avanti"
+- eraseText: 5
+- inputText: "18:30"
+- tapOn: "Avanti"
+- eraseText: 5
+- inputText: "19:00"
+- tapOn: "Salva"
+- assertVisible:
+    text: "AutomationTest"
+- tapOn: "⚙️"
+- scroll
+- tapOn: "Riconfigura i miei dati"
+- tapOn: "Sì, riconfigura"
+- tapOn: "Es. Marco"
+- inputText: "Test"
+- pressKey: back
+- tapOn: "Avanti →"
+- tapOn: "Es. Rossi"
+- inputText: "Automation"
+- pressKey: back
+- tapOn: "Avanti →"
+- tapOn: "30 maggio 2008"
+- repeat:
+    times: 18
+    commands:
+      - swipe:
+          start: "50%,50%"
+          end: "90%,50%"
+          duration: 5
+- tapOn: "15"
+- tapOn: "Ok"
+- tapOn: "Avanti →"
+- tapOn: "Inizia la tua routine! 🎯"
+- assertVisible:
+    text: "Test Automation"
+- assertVisible:
+    text: "Nessuna task per oggi"
+- stopRecording                   # Saves the video file

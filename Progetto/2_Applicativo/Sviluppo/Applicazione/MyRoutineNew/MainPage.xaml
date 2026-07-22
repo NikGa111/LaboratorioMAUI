@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<local:BaseContentPage
+    xmlns:local="clr-namespace:MyRoutineNew"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MyRoutineNew.MainPage"
+    BackgroundColor="#FDF7F0">
+
+    <ScrollView>
+        
+        <VerticalStackLayout Spacing="0">
+
+            <!-- ── HEADER ── -->
+            <Grid Padding="20,48,20,16" ColumnDefinitions="56,*,40" ColumnSpacing="14">
+                <Border Grid.Column="0"
+                        WidthRequest="52" HeightRequest="52"
+                        BackgroundColor="#F97316" StrokeThickness="0">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="16"/>
+                    </Border.StrokeShape>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnAvatarTapped"/>
+                    </Border.GestureRecognizers>
+                    <Label x:Name="LabelAvatarIni" Text="?" TextColor="White"
+                           FontSize="18" FontAttributes="Bold"
+                           HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Border>
+
+                <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="2">
+                    <Label Text="Bentornato 👋" FontSize="12" TextColor="#7A6850"/>
+                    <Label x:Name="LabelBenvenuto" Text="" FontSize="17"
+                           FontAttributes="Bold" TextColor="#1C1409"/>
+                </VerticalStackLayout>
+
+                <Border Grid.Column="2" WidthRequest="36" HeightRequest="36"
+                        BackgroundColor="#EDE5D8" StrokeThickness="0" VerticalOptions="Center">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="10"/>
+                    </Border.StrokeShape>
+                    <Label Text="🔔" FontSize="16"
+                           HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Border>
+            </Grid>
+
+            <!-- ── CARD AVANZAMENTO ── -->
+            <Border Margin="20,0,20,20"
+                    BackgroundColor="White" Stroke="#E8E0D4"
+                    StrokeThickness="1" Padding="18,16">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="18"/>
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="12">
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Grid.Column="0" Text="Completamento oggi"
+                               FontSize="13" TextColor="#7A6850"/>
+                        <Label x:Name="LabelProgressTesto" Grid.Column="1"
+                               Text="0 / 0" FontSize="14" FontAttributes="Bold"
+                               TextColor="#1C1409"/>
+                    </Grid>
+                    <ProgressBar x:Name="ProgressOggi" Progress="0"
+                                 ProgressColor="#F97316" BackgroundColor="#EDE5D8"
+                                 HeightRequest="8"/>
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label x:Name="LabelPctTesto" Grid.Column="0"
+                               Text="0% completato" FontSize="11" TextColor="#B8A88A"/>
+                        <Label x:Name="LabelRimanenti" Grid.Column="1"
+                               Text="" FontSize="11" TextColor="#B8A88A"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- ── TITOLO SEZIONE ── -->
+            <Label Margin="20,0,20,12" Text="PROSSIME TASK"
+                   FontSize="11" FontAttributes="Bold"
+                   CharacterSpacing="1.5" TextColor="#7A6850"/>
+
+            <!-- ── LISTA TASK DINAMICA ── -->
+            <VerticalStackLayout x:Name="StackTask" Spacing="0"/>
+
+            <!-- ── PLACEHOLDER SE NON CI SONO TASK ── -->
+            <Border x:Name="CardNessuna"
+                    Margin="20,0,20,10"
+                    BackgroundColor="White" Stroke="#E8E0D4"
+                    StrokeThickness="1" Padding="20,24"
+                    IsVisible="False">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="18"/>
+                </Border.StrokeShape>
+                <VerticalStackLayout HorizontalOptions="Center" Spacing="8">
+                    <Label Text="📭" FontSize="32" HorizontalTextAlignment="Center"/>
+                    <Label Text="Nessuna task per oggi"
+                           FontSize="14" FontAttributes="Bold"
+                           TextColor="#1C1409" HorizontalTextAlignment="Center"/>
+                    <Label Text="Vai in Agenda per aggiungerne una!"
+                           FontSize="12" TextColor="#7A6850" HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <BoxView HeightRequest="20" Color="Transparent"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</local:BaseContentPage>

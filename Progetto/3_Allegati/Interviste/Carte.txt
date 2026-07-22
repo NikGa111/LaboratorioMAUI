@@ -1,0 +1,33 @@
+inserire qui le carte es.
+
+
+1.Ciao
+2.Buongiorno
+
+
+-1.Menu
+2.Profilo
+-3.Schermata iniziale
+-4.Impostazioni
+5.Personalizzazione
+6.Taskbar
+7.Notifiche
+8.Aggiungi attività
+9.Colori
+10.Badge
+11.Challenge
+12.Scoreboard
+13.Statistiche
+14.Data
+15.Taccuino
+16.Attività
+17.Assistente
+-18.Bohdan
+-19.Priorità
+20.Allenamento
+21.Abitudini
+22.Alimentazione
+23.Calendario
+24.Attività imminenti
+25.Stile
+-26.Pubblicità

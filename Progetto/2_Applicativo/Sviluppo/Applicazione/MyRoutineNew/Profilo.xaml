@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<local:BaseContentPage  
+    xmlns:local="clr-namespace:MyRoutineNew"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:MyRoutine.Models"
+    x:Class="MyRoutineNew.Profilo"
+    BackgroundColor="{StaticResource BgPage}">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="0">
+
+
+            <VerticalStackLayout
+                Padding="20,48,20,24"
+                HorizontalOptions="Center"
+                Spacing="12">
+
+                <!-- Avatar grande -->
+                <Border
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    BackgroundColor="{StaticResource Accent}"
+                    StrokeThickness="0"
+                    HorizontalOptions="Center">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="28"/>
+                    </Border.StrokeShape>
+                    <!-- Iniziali: impostare da code-behind -->
+                    <Label
+                        x:Name="LabelAvatarIni"
+                        Text="MR"
+                        TextColor="White"
+                        FontSize="28"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+                </Border>
+
+                <!-- Nome e cognome -->
+                <VerticalStackLayout HorizontalOptions="Center" Spacing="4">
+                    <Label
+                        x:Name="LabelNomeCognome"
+                        Text="Marco Rossi"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        TextColor="{StaticResource TextPrimary}"
+                        HorizontalTextAlignment="Center"/>
+                    <Label
+                        Text="Membro da Marzo 2024"
+                        FontSize="12"
+                        TextColor="{StaticResource TextSecondary}"
+                        HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+
+            </VerticalStackLayout>
+
+            <Grid
+                Margin="20,0,20,20"
+                ColumnDefinitions="*,*,*"
+                ColumnSpacing="10">
+
+                <!-- Task totali -->
+                <Border
+                    Grid.Column="0"
+                    BackgroundColor="{StaticResource BgCard}"
+                    Stroke="{StaticResource BorderBrush}"
+                    StrokeThickness="1"
+                    Padding="12">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="14"/>
+                    </Border.StrokeShape>
+                    <VerticalStackLayout HorizontalOptions="Center" Spacing="2">
+                        <Label
+                            x:Name="LabelStatTask"
+                            Text="42"
+                            FontSize="20"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource Accent}"
+                            HorizontalTextAlignment="Center"/>
+                        <Label
+                            Text="Task totali"
+                            FontSize="10"
+                            TextColor="{StaticResource TextSecondary}"
+                            HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Badge -->
+                <Border
+                    Grid.Column="1"
+                    BackgroundColor="{StaticResource BgCard}"
+                    Stroke="{StaticResource BorderBrush}"
+                    StrokeThickness="1"
+                    Padding="12">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="14"/>
+                    </Border.StrokeShape>
+                    <VerticalStackLayout HorizontalOptions="Center" Spacing="2">
+                        <Label
+                            x:Name="LabelStatBadge"
+                            Text="7"
+                            FontSize="20"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource Accent}"
+                            HorizontalTextAlignment="Center"/>
+                        <Label
+                            Text="Badge"
+                            FontSize="10"
+                            TextColor="{StaticResource TextSecondary}"
+                            HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Streak -->
+                <Border
+                    Grid.Column="2"
+                    BackgroundColor="{StaticResource BgCard}"
+                    Stroke="{StaticResource BorderBrush}"
+                    StrokeThickness="1"
+                    Padding="12">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="14"/>
+                    </Border.StrokeShape>
+                    <VerticalStackLayout HorizontalOptions="Center" Spacing="2">
+                        <Label
+                            x:Name="LabelStatStreak"
+                            Text="12🔥"
+                            FontSize="20"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource Accent}"
+                            HorizontalTextAlignment="Center"/>
+                        <Label
+                            Text="Streak"
+                            FontSize="10"
+                            TextColor="{StaticResource TextSecondary}"
+                            HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+                </Border>
+
+            </Grid>
+
+            <!-- Separatore -->
+            <BoxView
+                Margin="20,0,20,16"
+                HeightRequest="1"
+                BackgroundColor="{StaticResource BorderColor}"/>
+
+            <Label
+                Margin="20,0,20,12"
+                Text="BADGE"
+                FontSize="11"
+                FontAttributes="Bold"
+                CharacterSpacing="1.5"
+                TextColor="{StaticResource TextSecondary}"/>
+
+            <CollectionView
+                x:Name="BadgeCollection"
+                Margin="20,0,20,20"
+                SelectionMode="None">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout
+                        Orientation="Vertical"
+                        Span="4"
+                        HorizontalItemSpacing="10"
+                        VerticalItemSpacing="10"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Badge">
+                        <Border
+                            StrokeThickness="0"
+                            Padding="6"
+                            HeightRequest="72">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="14"/>
+                            </Border.StrokeShape>
+
+                            <Border.Triggers>
+                                <DataTrigger
+                                    TargetType="Border"
+                                    Binding="{Binding Ottenuto}"
+                                    Value="True">
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Accent}"/>
+                                </DataTrigger>
+                                <DataTrigger
+                                    TargetType="Border"
+                                    Binding="{Binding Ottenuto}"
+                                    Value="False">
+                                    <Setter Property="BackgroundColor" Value="{StaticResource BgMuted}"/>
+                                    <Setter Property="Opacity" Value="0.5"/>
+                                </DataTrigger>
+                            </Border.Triggers>
+                            <VerticalStackLayout
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                Spacing="4">
+                                <!-- Emoji/icona badge -->
+                                <Label
+                                    Text="{Binding Nome}"
+                                    FontSize="8"
+                                    FontAttributes="Bold"
+                                    HorizontalTextAlignment="Center"
+                                    TextColor="White"
+                                    LineBreakMode="WordWrap"
+                                    MaxLines="2"/>
+                            </VerticalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <BoxView HeightRequest="20" Color="Transparent"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</local:BaseContentPage>

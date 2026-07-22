@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MyRoutineNew.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MyRoutineNew"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarBackgroundColor="#FFFFFF"
+    Shell.TabBarForegroundColor="#F97316"
+    Shell.TabBarTitleColor="#F97316"
+    Shell.TabBarUnselectedColor="#B8A88A"
+    Title="MyRoutine">
+
+    <TabBar>
+
+        <Tab Title="🏠">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="MainPage" />
+        </Tab>
+
+        <Tab Title="🗓️">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:Routine}"
+                Route="Routine" />
+        </Tab>
+
+        <Tab Title="📊">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:Statistiche}"
+                Route="Statistiche" />
+        </Tab>
+
+        <Tab Title="👤">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:Profilo}"
+                Route="Profilo" />
+        </Tab>
+
+        <Tab Title="⚙️">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:Impostazioni}"
+                Route="Impostazioni" />
+        </Tab>
+
+    </TabBar>
+
+</Shell>

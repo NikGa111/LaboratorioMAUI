@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<!--
+    Colors.xaml  –  Tema Foresta Notturna
+    Palette blu scuro profonda per MyRoutine
+-->
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!-- ── Sfondi ── -->
+    <Color x:Key="BgPage">#0F1419</Color>          <!-- blu scuro molto profondo -->
+    <Color x:Key="BgCard">#1A232F</Color>          <!-- blu scuro card -->
+    <Color x:Key="BgSurface">#243447</Color>       <!-- blu scuro surface -->
+    <Color x:Key="BgMuted">#2D3E4F</Color>         <!-- blu scuro muted -->
+
+    <!-- ── Accenti ── -->
+    <Color x:Key="Accent">#00D9FF</Color>          <!-- ciano brillante primario -->
+    <Color x:Key="AccentSoft">#4DF2FF</Color>      <!-- ciano chiaro per highlight -->
+    <Color x:Key="AccentGreen">#00E5A0</Color>     <!-- verde acqua completato -->
+    <Color x:Key="AccentRed">#FF4757</Color>       <!-- rosso corallo / danger -->
+
+    <!-- ── Testo ── -->
+    <Color x:Key="TextPrimary">#E8F4F8</Color>     <!-- bianco freddo primario -->
+    <Color x:Key="TextSecondary">#A8C5D4</Color>   <!-- blu grigio secondario -->
+    <Color x:Key="TextMuted">#7A8FA3</Color>       <!-- blu grigio muted -->
+
+    <!-- ── Bordi ── -->
+    <Color x:Key="BorderColor">#364A5C</Color>     <!-- blu scuro bordo -->
+
+    <!-- ── Nav bar ── -->
+    <Color x:Key="NavBg">#1A232F</Color>           <!-- blu scuro card nav -->
+    <Color x:Key="NavUnselected">#7A8FA3</Color>   <!-- blu grigio unselected -->
+
+    <!-- ── Progresso ── -->
+    <Color x:Key="ProgressBg">#2D3E4F</Color>      <!-- blu scuro progress -->
+    <Color x:Key="ProgressFill">#00D9FF</Color>    <!-- ciano brillante fill -->
+
+    <!-- ── Badge ── -->
+    <Color x:Key="BadgeEarned">#00D9FF</Color>     <!-- ciano brillante earned -->
+    <Color x:Key="BadgeLocked">#2D3E4F</Color>     <!-- blu scuro locked -->
+
+    <!-- ── Mantenute per compatibilità con Styles.xaml di default ── -->
+    <Color x:Key="Primary">#00D9FF</Color>         <!-- ciano primario -->
+    <Color x:Key="PrimaryDark">#0099B3</Color>     <!-- ciano scuro -->
+    <Color x:Key="PrimaryDarkText">#0F1419</Color> <!-- testo su ciano -->
+    <Color x:Key="Secondary">#4DF2FF</Color>       <!-- ciano chiaro -->
+    <Color x:Key="SecondaryDarkText">#0F1419</Color> <!-- testo scuro su ciano -->
+    <Color x:Key="Tertiary">#00E5A0</Color>        <!-- verde acqua -->
+    <Color x:Key="White">#E8F4F8</Color>           <!-- bianco freddo -->
+    <Color x:Key="Black">#0F1419</Color>           <!-- nero blu -->
+    <Color x:Key="Gray100">#243447</Color>         <!-- blu chiaro 100 -->
+    <Color x:Key="Gray200">#2D3E4F</Color>         <!-- blu chiaro 200 -->
+    <Color x:Key="Gray300">#364A5C</Color>         <!-- blu grigio 300 -->
+    <Color x:Key="Gray400">#7A8FA3</Color>         <!-- blu grigio 400 -->
+    <Color x:Key="Gray500">#A8C5D4</Color>         <!-- blu grigio 500 -->
+    <Color x:Key="Gray600">#C0D3E0</Color>         <!-- blu grigio 600 -->
+    <Color x:Key="Gray900">#1A232F</Color>         <!-- blu scuro 900 -->
+    <Color x:Key="Gray950">#0F1419</Color>         <!-- blu scuro 950 -->
+    <Color x:Key="OffBlack">#0F1419</Color>        <!-- nero blu -->
+    <Color x:Key="MidnightBlue">#0A0E12</Color>    <!-- blu mezzanotte -->
+    <Color x:Key="Magenta">#00D9FF</Color>         <!-- ciano (sostituisce magenta) -->
+
+    <!-- ── Brush ── -->
+    <SolidColorBrush x:Key="PrimaryBrush"    Color="{StaticResource Primary}"/>
+    <SolidColorBrush x:Key="AccentBrush"     Color="{StaticResource Accent}"/>
+    <SolidColorBrush x:Key="BorderBrush"     Color="{StaticResource BorderColor}"/>
+    <SolidColorBrush x:Key="BgCardBrush"     Color="{StaticResource BgCard}"/>
+    <SolidColorBrush x:Key="BgSurfaceBrush"  Color="{StaticResource BgSurface}"/>
+    <SolidColorBrush x:Key="BgMutedBrush"    Color="{StaticResource BgMuted}"/>
+
+</ResourceDictionary>

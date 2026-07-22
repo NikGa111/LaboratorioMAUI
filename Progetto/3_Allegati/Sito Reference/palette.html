@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palette Showcase</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.section {
+  height: 100vh;
+  padding: 30px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.color {
+  height: 100px;
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 6px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.demo {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* -------- THEMES -------- */
+
+/* GLASS */
+.glass {
+  background: linear-gradient(135deg,#89f7fe,#66a6ff);
+}
+.glass .card {
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+}
+.glass button {
+  background: rgba(255,255,255,0.4);
+}
+
+/* STARTUP CLEAN */
+.startup {
+  background: #f6f9fc;
+  color:#111;
+}
+.startup .card { background:white; }
+.startup button { background:#635bff; color:white; }
+
+/* RETRO */
+.retro {
+  background:#f4a261;
+}
+.retro .card { background:#e76f51; }
+.retro button { background:#264653; color:white; }
+
+/* TERMINAL */
+.terminal {
+  background:#000;
+  color:#00ff9f;
+}
+.terminal .card { background:#021; }
+.terminal button { background:#00ff9f; color:black; }
+
+/* OCEAN */
+.ocean {
+  background:linear-gradient(#1e3c72,#2a5298);
+  color:white;
+}
+.ocean .card { background:#2a5298; }
+.ocean button { background:#4facfe; }
+
+/* SUNSET */
+.sunset {
+  background:linear-gradient(#ff7e5f,#feb47b);
+}
+.sunset .card { background:#fff3e0; }
+.sunset button { background:#ff6f61; color:white; }
+
+/* FOREST */
+.forest {
+  background:#1b4332;
+  color:white;
+}
+.forest .card { background:#2d6a4f; }
+.forest button { background:#95d5b2; color:black; }
+
+/* ICE */
+.ice {
+  background:#e0f7fa;
+}
+.ice .card { background:white; }
+.ice button { background:#00acc1; color:white; }
+
+/* GRADIENT PURPLE */
+.purple {
+  background:linear-gradient(135deg,#7f00ff,#e100ff);
+}
+.purple .card { background:rgba(0,0,0,0.4); }
+.purple button { background:#fff; }
+
+/* DRIBBBLE STYLE */
+.dribbble {
+  background:#ea4c89;
+  color:white;
+}
+.dribbble .card { background:#ff77a9; }
+.dribbble button { background:#fff; color:#ea4c89; }
+
+/* TWITTER/X STYLE */
+.social {
+  background:#15202b;
+  color:white;
+}
+.social .card { background:#192734; }
+.social button { background:#1da1f2; }
+
+/* MATERIAL YOU */
+.material {
+  background:#eaddff;
+}
+.material .card { background:#fff; }
+.material button { background:#6750a4; color:white; }
+
+/* COFFEE */
+.coffee {
+  background:#4b3832;
+  color:white;
+}
+.coffee .card { background:#854442; }
+.coffee button { background:#fff4e6; color:black; }
+
+/* LIME ENERGY */
+.lime {
+  background:#d9ff00;
+}
+.lime .card { background:#aaff00; }
+.lime button { background:black; color:white; }
+
+/* MONOCHROME */
+.mono {
+  background:#111;
+  color:#eee;
+}
+.mono .card { background:#222; }
+.mono button { background:#eee; color:#111; }
+
+/* SKY */
+.sky {
+  background:#87ceeb;
+}
+.sky .card { background:#bde0fe; }
+.sky button { background:#023e8a; color:white; }
+
+/* FIRE */
+.fire {
+  background:#ff3c38;
+  color:white;
+}
+.fire .card { background:#ff8c42; }
+.fire button { background:black; color:white; }
+
+/* CANDY */
+.candy {
+  background:#ffb3c1;
+}
+.candy .card { background:#ffc8dd; }
+.candy button { background:#ff4d6d; color:white; }
+
+/* MIDNIGHT BLUE */
+.midnight {
+  background:#03045e;
+  color:white;
+}
+.midnight .card { background:#0077b6; }
+.midnight button { background:#00b4d8; }
+
+/* DESERT */
+.desert {
+  background:#edc9af;
+}
+.desert .card { background:#d4a373; }
+.desert button { background:#6c584c; color:white; }
+
+/* DESERT */
+.trebby {
+  background:#ffefd4;
+}
+.trebby .card { background:#e090f0; }
+.trebby button { background:#4d114a; color:rgb(0, 0, 0); }
+
+</style>
+</head>
+
+<body>
+
+<script>
+function createSection(title, className, colors) {
+  return `
+  <section class="section ${className}">
+    <div>
+      <h2>${title}</h2>
+      <div class="palette">
+        ${colors.map(c => `<div class="color" style="background:${c}">${c}</div>`).join("")}
+      </div>
+    </div>
+
+    <div class="demo">
+      <div class="card">Card</div>
+      <button>Primary</button>
+      <button>Secondary</button>
+    </div>
+  </section>`;
+}
+
+const themes = [
+["Glass","glass",["#89f7fe","#66a6ff","#ffffff","#000"]],
+["Startup","startup",["#635bff","#f6f9fc","#111","#fff"]],
+["Retro","retro",["#f4a261","#e76f51","#264653","#fff"]],
+["Terminal","terminal",["#000","#00ff9f","#021","#fff"]],
+["Ocean","ocean",["#1e3c72","#2a5298","#4facfe","#fff"]],
+["Sunset","sunset",["#ff7e5f","#feb47b","#ff6f61","#fff"]],
+["Forest","forest",["#1b4332","#2d6a4f","#95d5b2","#fff"]],
+["Ice","ice",["#e0f7fa","#00acc1","#fff","#333"]],
+["Purple","purple",["#7f00ff","#e100ff","#fff","#000"]],
+["Dribbble","dribbble",["#ea4c89","#ff77a9","#fff","#000"]],
+["Social","social",["#15202b","#1da1f2","#192734","#fff"]],
+["Material","material",["#eaddff","#6750a4","#fff","#000"]],
+["Coffee","coffee",["#4b3832","#854442","#fff","#000"]],
+["Lime","lime",["#d9ff00","#aaff00","#000","#fff"]],
+["Mono","mono",["#111","#222","#eee","#fff"]],
+["Sky","sky",["#87ceeb","#bde0fe","#023e8a","#fff"]],
+["Fire","fire",["#ff3c38","#ff8c42","#000","#fff"]],
+["Candy","candy",["#ffb3c1","#ffc8dd","#ff4d6d","#fff"]],
+["Midnight","midnight",["#03045e","#0077b6","#00b4d8","#fff"]],
+["Desert","desert",["#edc9af","#d4a373","#6c584c","#fff"]],
+["trebby","trebby",["#ffefd4","#4d114a","#e090f0","#fff"]]
+];
+
+document.body.innerHTML += themes.map(t => createSection(...t)).join("");
+</script>
+
+</body>
+</html>

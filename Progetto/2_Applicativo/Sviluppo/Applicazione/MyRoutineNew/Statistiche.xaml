@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Statistiche.xaml  –  Schermata Statistiche
+
+    Proprietà C# usate:
+      Badge.Nome        → LabelMissioneNome nel DataTemplate CollectionView
+      Badge.Descrizione → LabelMissioneDesc
+      Badge.Ottenuto    → nasconde/mostra la barra missione
+
+    Valori numerici (task completate, streak, ecc.) sono impostati
+    da code-behind sui Label con x:Name:
+      LabelTaskMese, LabelStreak, LabelCompletamento, LabelBadgeCount
+      LabelMissionePct1, ProgressMissione1 …
+-->
+<local:BaseContentPage
+    xmlns:local="clr-namespace:MyRoutineNew"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MyRoutineNew.Statistiche"
+    BackgroundColor="{StaticResource BgPage}">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="0">
+
+
+            <VerticalStackLayout Padding="20,48,20,16" Spacing="4">
+                <Label
+                    Text="Statistiche"
+                    FontSize="22"
+                    FontAttributes="Bold"
+                    TextColor="{StaticResource TextPrimary}"/>
+                <Label
+                    x:Name="LabelStatsMese"
+                    Text="Aprile 2025"
+                    FontSize="12"
+                    TextColor="{StaticResource TextSecondary}"/>
+            </VerticalStackLayout>
+
+
+            <Grid
+                Margin="20,0,20,16"
+                ColumnDefinitions="*,*"
+                RowDefinitions="Auto,Auto"
+                ColumnSpacing="10"
+                RowSpacing="10">
+
+                <!-- Task questo mese -->
+                <Border
+                    Grid.Row="0" Grid.Column="0"
+                    BackgroundColor="{StaticResource BgCard}"
+                    Stroke="{StaticResource BorderBrush}"
+                    StrokeThickness="1"
+                    Padding="16,14">
+                    <Border.StrokeShape><RoundRectangle CornerRadius="18"/></Border.StrokeShape>
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Task questo mese" FontSize="10" TextColor="{StaticResource TextSecondary}"/>
+                        <Label x:Name="LabelTaskMese" Text="38" FontSize="26" FontAttributes="Bold" TextColor="{StaticResource Accent}"/>
+                        <Label x:Name="LabelTaskMeseDelta" Text="↑ +12 vs scorso mese" FontSize="10" TextColor="{StaticResource AccentGreen}" FontAttributes="Bold"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Streak -->
+                <Border
+                    Grid.Row="0" Grid.Column="1"
+                    BackgroundColor="{StaticResource BgCard}"
+                    Stroke="{StaticResource BorderBrush}"
+                    StrokeThickness="1"
+                    Padding="16,14">
+                    <Border.StrokeShape><RoundRectangle CornerRadius="18"/></Border.StrokeShape>
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Streak attuale" FontSize="10" TextColor="{StaticResource TextSecondary}"/>
+                        <Label x:Name="LabelStreak" Text="12🔥" FontSize="26" FontAttributes="Bold" TextColor="{StaticResource Accent}"/>
+                        <Label x:Name="LabelStreakRecord" Text="Record: 21 giorni" FontSize="10" TextColor="{StaticResource TextMuted}"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Completamento % -->
+                <Border
+                    Grid.Row="1" Grid.Column="0"
+                    BackgroundColor="{StaticResource BgCard}"
+                    Stroke="{StaticResource BorderBrush}"
+                    StrokeThickness="1"
+                    Padding="16,14">
+                    <Border.StrokeShape><RoundRectangle CornerRadius="18"/></Border.StrokeShape>
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Completamento" FontSize="10" TextColor="{StaticResource TextSecondary}"/>
+                        <Label x:Name="LabelCompletamento" Text="84%" FontSize="26" FontAttributes="Bold" TextColor="{StaticResource Accent}"/>
+                        <Label x:Name="LabelCompletamentoDelta" Text="↑ +6% vs scorso mese" FontSize="10" TextColor="{StaticResource AccentGreen}" FontAttributes="Bold"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Badge guadagnati -->
+                <Border
+                    Grid.Row="1" Grid.Column="1"
+                    BackgroundColor="{StaticResource BgCard}"
+                    Stroke="{StaticResource BorderBrush}"
+                    StrokeThickness="1"
+                    Padding="16,14">
+                    <Border.StrokeShape><RoundRectangle CornerRadius="18"/></Border.StrokeShape>
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Badge guadagnati" FontSize="10" TextColor="{StaticResource TextSecondary}"/>
+                        <Label x:Name="LabelBadgeCount" Text="7" FontSize="26" FontAttributes="Bold" TextColor="{StaticResource Accent}"/>
+                        <Label x:Name="LabelBadgeMancanti" Text="5 ancora da sbloccare" FontSize="10" TextColor="{StaticResource TextMuted}"/>
+                    </VerticalStackLayout>
+                </Border>
+
+            </Grid>
+
+
+            <Border
+                Margin="20,0,20,16"
+                BackgroundColor="{StaticResource BgCard}"
+                Stroke="{StaticResource BorderBrush}"
+                StrokeThickness="1"
+                Padding="16,14">
+                <Border.StrokeShape><RoundRectangle CornerRadius="18"/></Border.StrokeShape>
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Attività per giorno" FontSize="12" FontAttributes="Bold" TextColor="{StaticResource TextPrimary}"/>
+                    <Label Text="Media settimanale" FontSize="10" TextColor="{StaticResource TextSecondary}"/>
+
+                    <!-- Contenitore barre -->
+                    <Grid
+                        ColumnDefinitions="*,*,*,*,*,*,*"
+                        ColumnSpacing="6"
+                        HeightRequest="70"
+                        VerticalOptions="End">
+                        <!-- Le HeightRequest sono impostate da code-behind tramite x:Name -->
+                        <BoxView x:Name="BarLun"  Grid.Column="0" BackgroundColor="{StaticResource AccentSoft}" VerticalOptions="End" HeightRequest="28" CornerRadius="4"/>
+                        <BoxView x:Name="BarMar"  Grid.Column="1" BackgroundColor="{StaticResource AccentSoft}" VerticalOptions="End" HeightRequest="42" CornerRadius="4"/>
+                        <BoxView x:Name="BarMer"  Grid.Column="2" BackgroundColor="{StaticResource AccentSoft}" VerticalOptions="End" HeightRequest="56" CornerRadius="4"/>
+                        <BoxView x:Name="BarGio"  Grid.Column="3" BackgroundColor="{StaticResource Accent}"     VerticalOptions="End" HeightRequest="70" CornerRadius="4"/>
+                        <BoxView x:Name="BarVen"  Grid.Column="4" BackgroundColor="{StaticResource AccentSoft}" VerticalOptions="End" HeightRequest="49" CornerRadius="4"/>
+                        <BoxView x:Name="BarSab"  Grid.Column="5" BackgroundColor="{StaticResource AccentSoft}" VerticalOptions="End" HeightRequest="35" CornerRadius="4"/>
+                        <BoxView x:Name="BarDom"  Grid.Column="6" BackgroundColor="{StaticResource AccentSoft}" VerticalOptions="End" HeightRequest="63" CornerRadius="4"/>
+                    </Grid>
+
+                    <!-- Etichette giorni -->
+                    <Grid ColumnDefinitions="*,*,*,*,*,*,*" ColumnSpacing="6">
+                        <Label Grid.Column="0" Text="Lun" FontSize="8" TextColor="{StaticResource TextMuted}" HorizontalTextAlignment="Center"/>
+                        <Label Grid.Column="1" Text="Mar" FontSize="8" TextColor="{StaticResource TextMuted}" HorizontalTextAlignment="Center"/>
+                        <Label Grid.Column="2" Text="Mer" FontSize="8" TextColor="{StaticResource TextMuted}" HorizontalTextAlignment="Center"/>
+                        <Label Grid.Column="3" Text="Gio" FontSize="8" TextColor="{StaticResource Accent}"   HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                        <Label Grid.Column="4" Text="Ven" FontSize="8" TextColor="{StaticResource TextMuted}" HorizontalTextAlignment="Center"/>
+                        <Label Grid.Column="5" Text="Sab" FontSize="8" TextColor="{StaticResource TextMuted}" HorizontalTextAlignment="Center"/>
+                        <Label Grid.Column="6" Text="Dom" FontSize="8" TextColor="{StaticResource TextMuted}" HorizontalTextAlignment="Center"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+
+            <Label
+                Margin="20,0,20,12"
+                Text="MISSIONI BADGE"
+                FontSize="11"
+                FontAttributes="Bold"
+                CharacterSpacing="1.5"
+                TextColor="{StaticResource TextSecondary}"/>
+
+            <!-- Missione 1 (hardcoded; sostituire con CollectionView + DataTemplate) -->
+            <Border
+                Margin="20,0,20,10"
+                BackgroundColor="{StaticResource BgCard}"
+                Stroke="{StaticResource BorderBrush}"
+                StrokeThickness="1"
+                Padding="14,12">
+                <Border.StrokeShape><RoundRectangle CornerRadius="16"/></Border.StrokeShape>
+                <Grid ColumnDefinitions="40,*,Auto" ColumnSpacing="12">
+                    <Label Grid.Column="0" Text="🚀" FontSize="22" VerticalOptions="Center"/>
+                    <VerticalStackLayout Grid.Column="1" Spacing="6" VerticalOptions="Center">
+                        <Label x:Name="LabelMis1Nome" Text="100 Task Completate" FontSize="13" FontAttributes="Bold" TextColor="{StaticResource TextPrimary}"/>
+                        <Label x:Name="LabelMis1Desc" Text="38 di 100 task totali" FontSize="10" TextColor="{StaticResource TextSecondary}"/>
+                        <ProgressBar
+                            x:Name="ProgressMis1"
+                            Progress="0.38"
+                            ProgressColor="{StaticResource Accent}"
+                            BackgroundColor="{StaticResource ProgressBg}"
+                            HeightRequest="5"/>
+                    </VerticalStackLayout>
+                    <Label
+                        x:Name="LabelMis1Pct"
+                        Grid.Column="2"
+                        Text="38%"
+                        FontSize="11"
+                        FontAttributes="Bold"
+                        TextColor="{StaticResource Accent}"
+                        VerticalOptions="Center"/>
+                </Grid>
+            </Border>
+
+            <!-- Missione 2 -->
+            <Border
+                Margin="20,0,20,10"
+                BackgroundColor="{StaticResource BgCard}"
+                Stroke="{StaticResource BorderBrush}"
+                StrokeThickness="1"
+                Padding="14,12">
+                <Border.StrokeShape><RoundRectangle CornerRadius="16"/></Border.StrokeShape>
+                <Grid ColumnDefinitions="40,*,Auto" ColumnSpacing="12">
+                    <Label Grid.Column="0" Text="🌙" FontSize="22" VerticalOptions="Center"/>
+                    <VerticalStackLayout Grid.Column="1" Spacing="6" VerticalOptions="Center">
+                        <Label x:Name="LabelMis2Nome" Text="Notturno" FontSize="13" FontAttributes="Bold" TextColor="{StaticResource TextPrimary}"/>
+                        <Label x:Name="LabelMis2Desc" Text="Completa 5 task dopo le 22:00" FontSize="10" TextColor="{StaticResource TextSecondary}"/>
+                        <ProgressBar
+                            x:Name="ProgressMis2"
+                            Progress="0.6"
+                            ProgressColor="{StaticResource Accent}"
+                            BackgroundColor="{StaticResource ProgressBg}"
+                            HeightRequest="5"/>
+                    </VerticalStackLayout>
+                    <Label
+                        x:Name="LabelMis2Pct"
+                        Grid.Column="2"
+                        Text="3/5"
+                        FontSize="11"
+                        FontAttributes="Bold"
+                        TextColor="{StaticResource Accent}"
+                        VerticalOptions="Center"/>
+                </Grid>
+            </Border>
+
+            <!-- Missione 3 -->
+            <Border
+                Margin="20,0,20,10"
+                BackgroundColor="{StaticResource BgCard}"
+                Stroke="{StaticResource BorderBrush}"
+                StrokeThickness="1"
+                Padding="14,12">
+                <Border.StrokeShape><RoundRectangle CornerRadius="16"/></Border.StrokeShape>
+                <Grid ColumnDefinitions="40,*,Auto" ColumnSpacing="12">
+                    <Label Grid.Column="0" Text="🧘" FontSize="22" VerticalOptions="Center"/>
+                    <VerticalStackLayout Grid.Column="1" Spacing="6" VerticalOptions="Center">
+                        <Label x:Name="LabelMis3Nome" Text="Zen 30 giorni" FontSize="13" FontAttributes="Bold" TextColor="{StaticResource TextPrimary}"/>
+                        <Label x:Name="LabelMis3Desc" Text="Meditazione per 30 giorni consecutivi" FontSize="10" TextColor="{StaticResource TextSecondary}"/>
+                        <ProgressBar
+                            x:Name="ProgressMis3"
+                            Progress="0.4"
+                            ProgressColor="{StaticResource Accent}"
+                            BackgroundColor="{StaticResource ProgressBg}"
+                            HeightRequest="5"/>
+                    </VerticalStackLayout>
+                    <Label
+                        x:Name="LabelMis3Pct"
+                        Grid.Column="2"
+                        Text="12/30"
+                        FontSize="11"
+                        FontAttributes="Bold"
+                        TextColor="{StaticResource Accent}"
+                        VerticalOptions="Center"/>
+                </Grid>
+            </Border>
+
+            <BoxView HeightRequest="20" Color="Transparent"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</local:BaseContentPage>

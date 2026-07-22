@@ -1,0 +1,17 @@
+Come utente, voglio salvare tutte le mie password in un posto sicuro, così non rischio di perderle.
+
+Come utente, voglio accedere all'app tramite impronta digitale, così mi sento più sicura.
+
+Come utente, voglio organizzare le password per categorie (es. lavoro, social, banca), così posso trovarle facilmente.
+
+Come utente, voglio che le password si sincronizzino automaticamente tra i miei dispositivi, così non devo reinserirle ogni volta.
+
+Come utente, voglio ricevere un avviso se una password è debole o già utilizzata, così posso migliorarne la sicurezza.
+
+Come utente, voglio avere un pulsante “panico” per nascondere rapidamente tutte le password in caso di emergenza.
+
+ Use Case Principali (2–3)
+Use Case				Descrizione
+Gestione sicura delle password		L’utente può salvare, modificare e accedere alle password in modo protetto.
+Organizzazione e categorizzazione	L’utente può suddividere le password in categorie personalizzabili.
+Sincronizzazione multi-device		Le credenziali vengono sincronizzate automaticamente tra dispositivi.

@@ -1,0 +1,128 @@
+ USE CASE (estesi e dettagliati)
+UC1 – Accesso alla schermata iniziale
+Attori: Utente
+
+Descrizione: L’utente apre l’app e visualizza la schermata HOME con tutte le sezioni principali.
+
+Precondizione: L’utente ha effettuato il login.
+
+Flusso principale:
+
+L’utente apre l’app.
+
+Il sistema mostra la schermata HOME con i coach e le sezioni.
+
+L’utente seleziona una sezione (es. Allenamento).
+
+Postcondizione: L’utente accede alla sezione selezionata.
+
+UC2 – Tracciamento attività
+Attori: Utente
+
+Descrizione: L’utente registra le attività svolte.
+
+Precondizione: L’utente ha almeno un’attività da tracciare.
+
+Flusso principale:
+
+L’utente apre la barra TASK.
+
+Seleziona “Tracciamento”.
+
+Inserisce i dati dell’attività (es. durata, intensità).
+
+Salva.
+
+Postcondizione: Il sistema aggiorna il profilo e le statistiche.
+
+UC3 – Partecipazione a challenge
+Attori: Utente
+
+Descrizione: L’utente partecipa a una sfida.
+
+Precondizione: Challenge disponibile.
+
+Flusso principale:
+
+L’utente apre “Challenge”.
+
+Visualizza le sfide disponibili.
+
+Seleziona una sfida.
+
+Conferma la partecipazione.
+
+Postcondizione: Il sistema registra l’utente nella challenge.
+
+UC4 – Impostazione obiettivi
+Attori: Utente
+
+Descrizione: L’utente imposta obiettivi settimanali.
+
+Precondizione: L’utente è autenticato.
+
+Flusso principale:
+
+L’utente apre “Obiettivi”.
+
+Inserisce un nuovo obiettivo (es. 3 allenamenti/settimana).
+
+Imposta priorità e scadenza.
+
+Salva.
+
+Postcondizione: L’obiettivo viene aggiunto al profilo.
+
+UC5 – Personalizzazione impostazioni
+Attori: Utente
+
+Descrizione: L’utente modifica le impostazioni grafiche e di notifica.
+
+Precondizione: L’utente è autenticato.
+
+Flusso principale:
+
+L’utente accede a “Impostazioni”.
+
+Modifica colori, stile, notifiche.
+
+Salva le modifiche.
+
+Postcondizione: Le preferenze vengono salvate.
+
+UC6 – Visualizzazione e modifica profilo
+Attori: Utente
+
+Descrizione: L’utente consulta e modifica il proprio profilo.
+
+Precondizione: L’utente è autenticato.
+
+Flusso principale:
+
+L’utente apre “Profilo”.
+
+Visualizza nome, cognome, statistiche.
+
+Modifica i dati personali.
+
+Salva.
+
+Postcondizione: Il profilo viene aggiornato.
+
+UC7 – Ricezione consigli personalizzati
+Attori: Utente
+
+Descrizione: L’utente riceve suggerimenti basati sulle attività.
+
+Precondizione: L’utente ha registrato almeno un’attività.
+
+Flusso principale:
+
+Il sistema analizza le attività.
+
+Genera consigli (es. “Aumenta l’intensità dell’allenamento”).
+
+Mostra i suggerimenti nella schermata HOME.
+
+Postcondizione: L’utente visualizza i consigli.
+

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MyRoutineNew.Onboarding.OnboardingNome"
+    BackgroundColor="#FDF7F0"
+    Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="*,Auto" Padding="32,60,32,40">
+
+        <!-- Contenuto centrale -->
+        <VerticalStackLayout Grid.Row="0" VerticalOptions="Center" Spacing="32">
+
+            <!-- Icona -->
+            <Border
+                WidthRequest="80" HeightRequest="80"
+                BackgroundColor="#F97316"
+                StrokeThickness="0"
+                HorizontalOptions="Center">
+                <Border.StrokeShape><RoundRectangle CornerRadius="28"/></Border.StrokeShape>
+                <Label Text="👋" FontSize="36"
+                       HorizontalOptions="Center" VerticalOptions="Center"/>
+            </Border>
+
+            <!-- Testi -->
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Benvenuto in"
+                       FontSize="16" TextColor="#7A6850"
+                       HorizontalTextAlignment="Center"/>
+                <Label Text="MyRoutine"
+                       FontSize="32" FontAttributes="Bold"
+                       TextColor="#F97316"
+                       HorizontalTextAlignment="Center"/>
+                <Label Text="Cominciamo con qualche informazione su di te."
+                       FontSize="14" TextColor="#7A6850"
+                       HorizontalTextAlignment="Center"
+                       LineBreakMode="WordWrap"/>
+            </VerticalStackLayout>
+
+            <!-- Input nome -->
+            <VerticalStackLayout Spacing="8">
+                <Label Text="QUAL È IL TUO NOME?"
+                       FontSize="11" FontAttributes="Bold"
+                       CharacterSpacing="1.5"
+                       TextColor="#7A6850"/>
+                <Border
+                    BackgroundColor="White"
+                    Stroke="#E8E0D4"
+                    StrokeThickness="1.5"
+                    Padding="16,0">
+                    <Border.StrokeShape><RoundRectangle CornerRadius="14"/></Border.StrokeShape>
+                    <Entry
+                        x:Name="EntryNome"
+                        Placeholder="Es. Marco"
+                        PlaceholderColor="#B8A88A"
+                        TextColor="#1C1409"
+                        FontSize="16"
+                        HeightRequest="52"
+                        ReturnType="Next"
+                        BackgroundColor="Transparent"/>
+                </Border>
+                <Label x:Name="LabelErrore"
+                       Text="Inserisci il tuo nome per continuare."
+                       FontSize="12" TextColor="#F43F5E"
+                       IsVisible="False"/>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+
+        <!-- Pulsante Avanti -->
+        <Button
+            Grid.Row="1"
+            x:Name="BtnAvanti"
+            Text="Avanti →"
+            Clicked="OnAvantiClicked"
+            BackgroundColor="#F97316"
+            TextColor="White"
+            FontSize="16" FontAttributes="Bold"
+            HeightRequest="54"
+            CornerRadius="16"/>
+
+    </Grid>
+
+</ContentPage>

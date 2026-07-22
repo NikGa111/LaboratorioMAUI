@@ -1,0 +1,75 @@
+Nome della storia: Priorità
+Descrizione: come cliente, devo poter vedere quali attività sono più importanti, in modo da poter organizzarmi meglio per la giornata.
+
+Nome della storia: Notifiche
+Descrizione: come cliente, devo ricevere delle notifiche, in modo da poter sapere se ci sono scadenze o esercizi richiesti.
+
+Nome della storia: Badge
+Descrizione: come cliente, voglio avere dei badge, in modo da poter avere degli obbiettivi a cui arrivare con quotidianità.
+
+Nome della storia: Scoreboard
+Descrizione: come cliente, desidero avere una sezione dove vedo il punteggio ottenuto, in modo da poter confrontare con amici o conoscenti.
+
+Nome della storia: Assistente
+Descrizione: come cliente, desidero avere un assistente, in modo che mi consiglia le attività e gli esercizi del giorno.
+
+Nome della storia: Taccuino
+Descrizione: come cliente, desidero avere un taccuino, in modo da poter annotare note e commenti riguardanti attività.
+
+Nome della storia: Profilo
+Descrizione: come cliente, desidero avere un profilo, in modo da vedere le mie caratteristiche, obbiettivi, badge, e altre informazioni.
+
+Nome della storia: Calendario
+Descrizione: come cliente, desidero avere un calendario, in modo da vedere le attività per i vari giorni del mese.
+
+Nome della storia: Attività
+Descrizione: come cliente, desidero avere un elemento attività, in modo da poter inserire orario, priorità , colore, note, a una certa data.
+
+
+
+
+
+
+ HOME – SCHERMATA INIZIO
+
+Come utente, voglio accedere rapidamente alle sezioni “Attività”, “Allenamento”, “Alimentazione”, “Wellness”, così posso gestire il mio benessere in modo integrato.
+
+Come utente, voglio ricevere consigli e suggerimenti personalizzati, così posso migliorare le mie abitudini.
+
+Come utente, voglio che il menu sia sempre accessibile, così posso navigare tra le sezioni senza tornare indietro.
+
+Come utente, voglio che la schermata iniziale mi mostri le novità o aggiornamenti, così resto informato.
+
+ TASKBAR – BARRA ATTIVITÀ
+Come utente, voglio tracciare le mie attività giornaliere, così posso monitorare la mia costanza.
+
+Come utente, voglio partecipare a challenge settimanali, mensili o stagionali, così posso motivarmi con obiettivi condivisi.
+
+Come utente, voglio impostare obiettivi personalizzati, così posso adattare l’app alle mie esigenze.
+
+Come utente, voglio visualizzare i task settimanali in ordine di priorità, così posso organizzare meglio il mio tempo.
+
+Come utente, voglio ricevere notifiche quando un task è in scadenza, così non lo dimentico.
+
+ IMPOSTAZIONI
+Come utente, voglio scegliere tra diversi temi e stili grafici, così posso rendere l’app più piacevole per me.
+
+Come utente, voglio modificare il mio profilo e password in modo sicuro, così proteggo i miei dati.
+
+Come utente, voglio attivare/disattivare le notifiche per ogni sezione, così ricevo solo ciò che mi interessa.
+
+Come utente, voglio poter scegliere la lingua dell’app, così posso usarla nella mia lingua madre.
+
+Come utente, voglio sincronizzare i dati con altri dispositivi, così ho accesso ovunque.
+
+ PROFILO
+Come utente, voglio visualizzare il mio nome e cognome, così posso personalizzare il mio account.
+
+Come utente, voglio consultare le statistiche delle mie attività, così posso vedere i miei progressi.
+
+Come utente, voglio accedere allo storico delle attività, così posso analizzare la mia evoluzione.
+
+Come utente, voglio condividere i miei risultati con altri utenti o sui social, così posso celebrare i miei successi.
+
+Come utente, voglio esportare i miei dati in formato PDF o CSV, così posso conservarli o analizzarli.
+

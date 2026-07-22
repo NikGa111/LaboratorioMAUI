@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<!--
+    Colors.xaml  –  Tema Soleil (Originale)
+    Palette calda crema/arancio per MyRoutine
+    
+    NOTA: Questo file non richiede modifiche!
+    È già compatibile con il sistema di temi dinamici.
+-->
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!-- ── Sfondi ── -->
+    <Color x:Key="BgPage">#FDF7F0</Color>
+    <Color x:Key="BgCard">#FFFFFF</Color>
+    <Color x:Key="BgSurface">#F5EFE6</Color>
+    <Color x:Key="BgMuted">#EDE5D8</Color>
+
+    <!-- ── Accenti ── -->
+    <Color x:Key="Accent">#F97316</Color>         <!-- arancio primario -->
+    <Color x:Key="AccentSoft">#FED7AA</Color>     <!-- arancio chiaro per highlight -->
+    <Color x:Key="AccentGreen">#10B981</Color>    <!-- verde completato -->
+    <Color x:Key="AccentRed">#F43F5E</Color>      <!-- rosso / danger -->
+
+    <!-- ── Testo ── -->
+    <Color x:Key="TextPrimary">#1C1409</Color>
+    <Color x:Key="TextSecondary">#7A6850</Color>
+    <Color x:Key="TextMuted">#B8A88A</Color>
+
+    <!-- ── Bordi ── -->
+    <Color x:Key="BorderColor">#E8E0D4</Color>
+
+    <!-- ── Nav bar ── -->
+    <Color x:Key="NavBg">#FFFFFF</Color>
+    <Color x:Key="NavUnselected">#B8A88A</Color>
+
+    <!-- ── Progresso ── -->
+    <Color x:Key="ProgressBg">#EDE5D8</Color>
+    <Color x:Key="ProgressFill">#F97316</Color>
+
+    <!-- ── Badge ── -->
+    <Color x:Key="BadgeEarned">#F97316</Color>
+    <Color x:Key="BadgeLocked">#EDE5D8</Color>
+
+    <!-- ── Mantenute per compatibilità con Styles.xaml di default ── -->
+    <Color x:Key="Primary">#F97316</Color>
+    <Color x:Key="PrimaryDark">#EA580C</Color>
+    <Color x:Key="PrimaryDarkText">#FFFFFF</Color>
+    <Color x:Key="Secondary">#FED7AA</Color>
+    <Color x:Key="SecondaryDarkText">#7A6850</Color>
+    <Color x:Key="Tertiary">#10B981</Color>
+    <Color x:Key="White">White</Color>
+    <Color x:Key="Black">Black</Color>
+    <Color x:Key="Gray100">#F5EFE6</Color>
+    <Color x:Key="Gray200">#EDE5D8</Color>
+    <Color x:Key="Gray300">#E8E0D4</Color>
+    <Color x:Key="Gray400">#B8A88A</Color>
+    <Color x:Key="Gray500">#7A6850</Color>
+    <Color x:Key="Gray600">#5C4A36</Color>
+    <Color x:Key="Gray900">#2E1F0E</Color>
+    <Color x:Key="Gray950">#1C1409</Color>
+    <Color x:Key="OffBlack">#1C1409</Color>
+    <Color x:Key="MidnightBlue">#1C1409</Color>
+    <Color x:Key="Magenta">#F97316</Color>
+
+    <!-- ── Brush ── -->
+    <SolidColorBrush x:Key="PrimaryBrush"    Color="{StaticResource Primary}"/>
+    <SolidColorBrush x:Key="AccentBrush"     Color="{StaticResource Accent}"/>
+    <SolidColorBrush x:Key="BorderBrush"     Color="{StaticResource BorderColor}"/>
+    <SolidColorBrush x:Key="BgCardBrush"     Color="{StaticResource BgCard}"/>
+    <SolidColorBrush x:Key="BgSurfaceBrush"  Color="{StaticResource BgSurface}"/>
+    <SolidColorBrush x:Key="BgMutedBrush"    Color="{StaticResource BgMuted}"/>
+
+</ResourceDictionary>

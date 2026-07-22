@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<local:BaseContentPage  
+    xmlns:local="clr-namespace:MyRoutineNew"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MyRoutineNew.Impostazioni"  
+    BackgroundColor="{StaticResource BgPage}">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="0">
+
+            <Label Padding="20,48,20,20" Text="Impostazioni"
+                   FontSize="22" FontAttributes="Bold" TextColor="{StaticResource TextPrimary}"/>
+
+            <!-- ── NOTIFICHE ── -->
+            <Label Margin="20,0,20,8" Text="NOTIFICHE"
+                   FontSize="10" FontAttributes="Bold"
+                   CharacterSpacing="1.5" TextColor="{StaticResource TextSecondary}"/>
+
+            <Border Margin="16,0,16,20" BackgroundColor="{StaticResource BgCard}"
+                    Stroke="{StaticResource BorderColor}" StrokeThickness="1">
+                <Border.StrokeShape><RoundRectangle CornerRadius="18"/></Border.StrokeShape>
+                <VerticalStackLayout>
+
+                    <Grid Padding="16,14" ColumnDefinitions="36,*,Auto" ColumnSpacing="12">
+                        <Border Grid.Column="0" WidthRequest="32" HeightRequest="32"
+                                BackgroundColor="{StaticResource BgSurface}" StrokeThickness="0" VerticalOptions="Center">
+                            <Border.StrokeShape><RoundRectangle CornerRadius="10"/></Border.StrokeShape>
+                            <Label Text="🔔" FontSize="15" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Border>
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="1">
+                            <Label Text="Promemoria task" FontSize="13" FontAttributes="Bold" TextColor="{StaticResource TextPrimary}"/>
+                            <Label Text="Notifica 15 min prima" FontSize="10" TextColor="{StaticResource TextSecondary}"/>
+                        </VerticalStackLayout>
+                        <Switch x:Name="SwitchPromemoria" Grid.Column="2"
+                                IsToggled="True" OnColor="{StaticResource Accent}" ThumbColor="{StaticResource BgPage}"
+                                Toggled="OnSwitchPromemoriaToggled" VerticalOptions="Center"/>
+                    </Grid>
+
+                    <BoxView HeightRequest="1" Margin="16,0" BackgroundColor="{StaticResource BorderColor}"/>
+
+                    <Grid Padding="16,14" ColumnDefinitions="36,*,Auto" ColumnSpacing="12">
+                        <Border Grid.Column="0" WidthRequest="32" HeightRequest="32"
+                                BackgroundColor="{StaticResource BgSurface}" StrokeThickness="0" VerticalOptions="Center">
+                            <Border.StrokeShape><RoundRectangle CornerRadius="10"/></Border.StrokeShape>
+                            <Label Text="🏆" FontSize="15" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Border>
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="1">
+                            <Label Text="Badge sbloccati" FontSize="13" FontAttributes="Bold" TextColor="{StaticResource TextPrimary}"/>
+                            <Label Text="Avvisi nuovi badge" FontSize="10" TextColor="{StaticResource TextSecondary}"/>
+                        </VerticalStackLayout>
+                        <Switch x:Name="SwitchBadge" Grid.Column="2"
+                                IsToggled="True" OnColor="{StaticResource Accent}" ThumbColor="{StaticResource BgPage}"
+                                Toggled="OnSwitchBadgeToggled" VerticalOptions="Center"/>
+                    </Grid>
+
+                    <BoxView HeightRequest="1" Margin="16,0" BackgroundColor="{StaticResource BorderColor}"/>
+
+                    <Grid Padding="16,14" ColumnDefinitions="36,*,Auto" ColumnSpacing="12">
+                        <Border Grid.Column="0" WidthRequest="32" HeightRequest="32"
+                                BackgroundColor="{StaticResource BgSurface}" StrokeThickness="0" VerticalOptions="Center">
+                            <Border.StrokeShape><RoundRectangle CornerRadius="10"/></Border.StrokeShape>
+                            <Label Text="📊" FontSize="15" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Border>
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="1">
+                            <Label Text="Report settimanale" FontSize="13" FontAttributes="Bold" TextColor="{StaticResource TextPrimary}"/>
+                            <Label Text="Riepilogo ogni domenica" FontSize="10" TextColor="{StaticResource TextSecondary}"/>
+                        </VerticalStackLayout>
+                        <Switch x:Name="SwitchReport" Grid.Column="2"
+                                IsToggled="False" OnColor="{StaticResource Accent}" ThumbColor="{StaticResource BgPage}"
+                                Toggled="OnSwitchReportToggled" VerticalOptions="Center"/>
+                    </Grid>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- ── PREFERENZE ── -->
+            <Label Margin="20,0,20,8" Text="PREFERENZE"
+                   FontSize="10" FontAttributes="Bold"
+                   CharacterSpacing="1.5" TextColor="{StaticResource TextSecondary}"/>
+
+            <Border Margin="16,0,16,20" BackgroundColor="{StaticResource BgCard}"
+                    Stroke="{StaticResource BorderColor}" StrokeThickness="1">
+                <Border.StrokeShape><RoundRectangle CornerRadius="18"/></Border.StrokeShape>
+                <VerticalStackLayout>
+                    <Grid Padding="16,14" ColumnDefinitions="36,*,Auto" ColumnSpacing="12">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLinguaTapped"/>
+                        </Grid.GestureRecognizers>
+                        <Border Grid.Column="0" WidthRequest="32" HeightRequest="32"
+                                BackgroundColor="{StaticResource BgSurface}" StrokeThickness="0" VerticalOptions="Center">
+                            <Border.StrokeShape><RoundRectangle CornerRadius="10"/></Border.StrokeShape>
+                            <Label Text="🌍" FontSize="15" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Border>
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="1">
+                            <Label Text="Lingua" FontSize="13" FontAttributes="Bold" TextColor="{StaticResource TextPrimary}"/>
+                            <Label x:Name="LabelLinguaValore" Text="Italiano" FontSize="10" TextColor="{StaticResource TextSecondary}"/>
+                        </VerticalStackLayout>
+                        <Label Grid.Column="2" Text="›" FontSize="18" TextColor="{StaticResource TextMuted}" VerticalOptions="Center"/>
+                    </Grid>
+
+                    <BoxView HeightRequest="1" Margin="16,0" BackgroundColor="{StaticResource BorderColor}"/>
+
+                    <Grid Padding="16,14" ColumnDefinitions="36,*,Auto" ColumnSpacing="12">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnInizioGiornataTapped"/>
+                        </Grid.GestureRecognizers>
+                        <Border Grid.Column="0" WidthRequest="32" HeightRequest="32"
+                                BackgroundColor="{StaticResource BgSurface}" StrokeThickness="0" VerticalOptions="Center">
+                            <Border.StrokeShape><RoundRectangle CornerRadius="10"/></Border.StrokeShape>
+                            <Label Text="⏰" FontSize="15" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Border>
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="1">
+                            <Label Text="Inizio giornata" FontSize="13" FontAttributes="Bold" TextColor="{StaticResource TextPrimary}"/>
+                            <Label x:Name="LabelInizioGiornata" Text="06:00" FontSize="10" TextColor="{StaticResource TextSecondary}"/>
+                        </VerticalStackLayout>
+                        <Label Grid.Column="2" Text="›" FontSize="18" TextColor="{StaticResource TextMuted}" VerticalOptions="Center"/>
+                    </Grid>
+                
+                    <BoxView HeightRequest="1" Margin="16,0" BackgroundColor="{StaticResource BorderColor}"/>
+
+                    <!-- ── SELETTORE TEMA ── 
+                    <VerticalStackLayout Padding="16,14" Spacing="12">
+                        <Label Text="Tema app" FontSize="13" FontAttributes="Bold" TextColor="{StaticResource TextPrimary}"/>
+                        <HorizontalStackLayout Spacing="12" HorizontalOptions="Center">
+                            
+                            <Border x:Name="ThemeSoleil" StrokeThickness="3" Stroke="{StaticResource Accent}" 
+                                    BackgroundColor="#F97316" WidthRequest="58" HeightRequest="58">
+                                <Border.StrokeShape><RoundRectangle CornerRadius="20"/></Border.StrokeShape>
+                                <Border.GestureRecognizers><TapGestureRecognizer Tapped="OnThemeSoleilTapped"/></Border.GestureRecognizers>
+                            </Border>
+                            
+                            <Border x:Name="ThemeNightForest" StrokeThickness="0" BackgroundColor="#00D9FF" 
+                                    WidthRequest="58" HeightRequest="58">
+                                <Border.StrokeShape><RoundRectangle CornerRadius="20"/></Border.StrokeShape>
+                                <Border.GestureRecognizers><TapGestureRecognizer Tapped="OnThemeNightForestTapped"/></Border.GestureRecognizers>
+                            </Border>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>-->
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- ══════════════════════════════════
+                 DATI PERSONALI – Riconfigura
+            ══════════════════════════════════ -->
+            <Label Margin="20,0,20,8" Text="DATI PERSONALI"
+                   FontSize="10" FontAttributes="Bold"
+                   CharacterSpacing="1.5" TextColor="{StaticResource TextSecondary}"/>
+            
+
+            <Border Margin="16,0,16,20" BackgroundColor="{StaticResource BgCard}"
+                    Stroke="{StaticResource BorderColor}" StrokeThickness="1">
+                <Border.StrokeShape><RoundRectangle CornerRadius="18"/></Border.StrokeShape>
+                <Grid Padding="16,14" ColumnDefinitions="36,*,Auto" ColumnSpacing="12">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnRiconfiguraTapped"/>
+                    </Grid.GestureRecognizers>
+                    <Border Grid.Column="0" WidthRequest="32" HeightRequest="32"
+                            BackgroundColor="{StaticResource BgSurface}" StrokeThickness="0" VerticalOptions="Center">
+                        <Border.StrokeShape><RoundRectangle CornerRadius="10"/></Border.StrokeShape>
+                        <Label Text="✏️" FontSize="15" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </Border>
+                    <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="1">
+                        <Label Text="Riconfigura i miei dati"
+                               FontSize="13" FontAttributes="Bold" TextColor="{StaticResource Accent}"/>
+                        <Label Text="Ripeti la configurazione iniziale"
+                               FontSize="10" TextColor="{StaticResource TextSecondary}"/>
+                    </VerticalStackLayout>
+                    <Label Grid.Column="2" Text="›" FontSize="18" TextColor="{StaticResource TextMuted}" VerticalOptions="Center"/>
+                </Grid>
+            </Border>
+
+            <!-- ── ACCOUNT ── -->
+            <Label Margin="20,0,20,8" Text="ACCOUNT"
+                   FontSize="10" FontAttributes="Bold"
+                   CharacterSpacing="1.5" TextColor="{StaticResource TextSecondary}"/>
+
+            <Border Margin="16,0,16,20" BackgroundColor="{StaticResource BgCard}"
+                    Stroke="{StaticResource BorderColor}" StrokeThickness="1">
+                <Border.StrokeShape><RoundRectangle CornerRadius="18"/></Border.StrokeShape>
+                <Grid Padding="16,14" ColumnDefinitions="36,*" ColumnSpacing="12">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnEsciTapped"/>
+                    </Grid.GestureRecognizers>
+                    <Border Grid.Column="0" WidthRequest="32" HeightRequest="32"
+                            BackgroundColor="{StaticResource BgSurface}" StrokeThickness="0" VerticalOptions="Center">
+                        <Border.StrokeShape><RoundRectangle CornerRadius="10"/></Border.StrokeShape>
+                        <Label Text="🚪" FontSize="15" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </Border>
+                    <Label Grid.Column="1" Text="Esci"
+                           FontSize="13" FontAttributes="Bold"
+                           TextColor="{StaticResource AccentRed}" VerticalOptions="Center"/>
+                </Grid>
+            </Border>
+            <Button
+    Text="Esporta dati JSON"
+    Clicked="ExportDataClicked"/>
+            
+
+            <BoxView HeightRequest="20" Color="Transparent"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</local:BaseContentPage>
